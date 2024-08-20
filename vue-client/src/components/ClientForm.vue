@@ -30,7 +30,30 @@
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
-              <!-- Adicione outras opções conforme necessário -->
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
             </select>
 
             <label for="genero">Gênero:</label>
@@ -51,11 +74,13 @@
               <option value="Instagram">Instagram</option>
               <option value="Facebook">Facebook</option>
               <option value="Google">Google</option>
-              <!-- Adicione outras opções conforme necessário -->
+              <option value="Tik Tok">Tik Tok</option>
+              <option value="Já sou cliente">Já sou cliente</option>
+              <option value="Indicação de amigo">Indicação de amigo</option>
+              <option value="Outros">Outros</option>
             </select>
           </div>
           <div class="form-column">
-            <!-- Campos adicionais -->
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" v-model="cpf" />
 
@@ -70,10 +95,12 @@
 
             <label for="regiao">Região:</label>
             <select id="regiao" v-model="regiao">
-              <option value="">Escolha um</option>
+              <option value="">Escolha uma região</option>
               <option value="Centro-Oeste">Centro-Oeste</option>
               <option value="Nordeste">Nordeste</option>
-              <!-- Adicione outras opções conforme necessário -->
+              <option value="Norte">Norte</option>
+              <option value="Sudeste">Sudeste</option>
+              <option value="Sul">Sul</option>
             </select>
 
             <label for="celular">Celular:</label>
@@ -81,10 +108,25 @@
 
             <label for="estilo_musical">Estilo Musical:</label>
             <select id="estilo_musical" v-model="estilo_musical">
-              <option value="">Escolha um</option>
+              <option value="">Escolha um estilo</option>
               <option value="Black Music">Black Music</option>
               <option value="Blues/Jazz">Blues/Jazz</option>
-              <!-- Adicione outras opções conforme necessário -->
+              <option value="Forró eletrônico">Forró eletrônico</option>
+              <option value="Forró pé de serra/Xote">Forró pé de serra/Xote</option>
+              <option value="Funk">Funk</option>
+              <option value="Gospel">Gospel</option>
+              <option value="Hard Rock/Metal">Hard Rock/Metal</option>
+              <option value="MPB">MPB</option>
+              <option value="Piseiro">Piseiro</option>
+              <option value="Pop">Pop</option>
+              <option value="Pop Rock">Pop Rock</option>
+              <option value="Rap">Rap</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Rock Alternativo">Rock Alternativo</option>
+              <option value="Samba/Pagode">Samba/Pagode</option>
+              <option value="Sertanejo">Sertanejo</option>
+              <option value="Trap">Trap</option>
+              <option value="Outro estilo">Outro estilo</option>
             </select>
           </div>
         </div>
