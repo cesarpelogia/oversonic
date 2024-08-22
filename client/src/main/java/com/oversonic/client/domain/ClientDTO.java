@@ -26,30 +26,43 @@ public class ClientDTO{
     private String CA15_GENERO;
 
     private String CA15_STATUS = "A";
+
     @JsonProperty("cpf")
     private String CA15_CPF;
+
     @JsonProperty("celular")
     private String CA15_CELULAR;
+
     @JsonProperty("cep")
     private String CA15_CEP;
+
     @JsonProperty("regiao")
     private String CA15_REGIAO;
+
     @JsonProperty("endereco")
     private String CA15_ENDEREC;
+
     @JsonProperty("numero")
     private String CA15_NUM;
+
     @JsonProperty("bairro")
     private String CA15_BAIRRO;
+
     @JsonProperty("municipio")
     private String CA15_MUNICP;
+
     @JsonProperty("estado")
     private String CA15_ESTADO;
+
     @JsonProperty("complemento")
     private String CA15_COMPLEM;
+
     @JsonProperty("estilo")
     private String CA15_ESTILO_MUSIC;
+
     @JsonProperty("midia")
     private String CA15_TIPO_MIDIA;
+    
     @JsonProperty("email")
     private String CA15_EMAIL;
 
@@ -63,7 +76,6 @@ public class ClientDTO{
     public void setCA15_NOME(String CA15_NOME) {
         this.CA15_NOME = CA15_NOME;
     }
-
     public Date getCA15_DATA() {
         return CA15_DATA;
     }

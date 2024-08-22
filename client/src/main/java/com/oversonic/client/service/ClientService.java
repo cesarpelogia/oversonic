@@ -12,7 +12,7 @@ public class ClientService {
     @Autowired
     public ClientRepository clientRepository;
     
-    public void create(ClientDTO newClient) {
+    public void createCLient(ClientDTO newClient) {
         clientRepository.save(newClient);
     }
 }

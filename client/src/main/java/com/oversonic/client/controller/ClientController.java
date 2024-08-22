@@ -21,9 +21,9 @@ public class ClientController {
     private ClientService clientService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> create(@RequestBody ClientDTO newClient) {
+    public ResponseEntity<String> createCLient(@RequestBody ClientDTO newClient) {
         try {
-            clientService.create(newClient);
+            clientService.createCLient(newClient);
             String responseMessage = String.format(
                 "Cliente criado com sucesso: %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s",
                 newClient.getCA15_NOME(),
@@ -48,6 +48,7 @@ public class ClientController {
             return ResponseEntity.status(500).body("Erro ao criar cliente: " + e.getMessage());
         }
     }
+
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
