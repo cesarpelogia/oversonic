@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.oversonic.client.domain.ClientDTO;
 
 @Repository
-public interface ClientRepository extends JpaRepository <ClientDTO, Long> {
+public interface ClientRepository extends JpaRepository <ClientDTO, Integer> {
 }

@@ -1,16 +1,18 @@
-package com.oversonic.client.service;
+// package com.oversonic.client.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
 
-import com.oversonic.client.domain.MusicDTO;
-import com.oversonic.client.repository.MusicRepository;
+// import com.oversonic.client.domain.MusicDTO;
+// import com.oversonic.client.repository.MusicRepository;
 
-public class MusicService {
+// @Service
+// public class MusicService {
 
-    @Autowired
-    private MusicRepository musicRepository;
+//     @Autowired
+//     private MusicRepository musicRepository;
 
-    public void createMusic(MusicDTO newMusic) {
-        musicRepository.save(newMusic);
-    }
-}
+//     public void createMusic(MusicDTO newMusic) {
+//         musicRepository.save(newMusic);
+//     }
+// }

@@ -4,78 +4,104 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "ca_15")
-public class ClientDTO{
+@Table(name = "CA15")
+public class ClientDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long CPID;
+    @Column(name = "CPID")
+    private Integer CPID;
 
     @JsonProperty("nome")
+    @Column(name = "CA15_NOME")
     private String CA15_NOME;
-    
-    private Date CA15_DATA = new Date();
+
+    @Column(name = "CA15_DATA")
+    @Temporal(TemporalType.DATE)
+    private Date CA15_DATA;
+
     @JsonProperty("genero")
+    @Column(name = "CA15_GENERO")
     private String CA15_GENERO;
 
+    @Column(name = "CA15_STATUS")
     private String CA15_STATUS = "A";
 
     @JsonProperty("cpf")
+    @Column(name = "CA15_CPF")
     private String CA15_CPF;
 
     @JsonProperty("celular")
+    @Column(name = "CA15_CELULAR")
     private String CA15_CELULAR;
 
     @JsonProperty("cep")
+    @Column(name = "CA15_CEP")
     private String CA15_CEP;
 
     @JsonProperty("regiao")
+    @Column(name = "CA15_REGIAO")
     private String CA15_REGIAO;
 
     @JsonProperty("endereco")
+    @Column(name = "CA15_ENDEREC")
     private String CA15_ENDEREC;
 
     @JsonProperty("numero")
+    @Column(name = "CA15_NUM")
     private String CA15_NUM;
 
     @JsonProperty("bairro")
+    @Column(name = "CA15_BAIRRO")
     private String CA15_BAIRRO;
 
     @JsonProperty("municipio")
+    @Column(name = "CA15_MUNICP")
     private String CA15_MUNICP;
 
     @JsonProperty("estado")
+    @Column(name = "CA15_ESTADO")
     private String CA15_ESTADO;
 
     @JsonProperty("complemento")
+    @Column(name = "CA15_COMPLEM")
     private String CA15_COMPLEM;
 
     @JsonProperty("estilo")
+    @Column(name = "CA15_ESTILO_MUSIC")
     private String CA15_ESTILO_MUSIC;
 
     @JsonProperty("midia")
+    @Column(name = "CA15_TIPO_MIDIA")
     private String CA15_TIPO_MIDIA;
-    
+
     @JsonProperty("email")
+    @Column(name = "CA15_EMAIL")
     private String CA15_EMAIL;
 
-
-    public long getCPID() {
+    // Getters e Setters
+    public Integer getCPID() {
         return CPID;
     }
+
     public String getCA15_NOME() {
         return CA15_NOME;
     }
+
     public void setCA15_NOME(String CA15_NOME) {
         this.CA15_NOME = CA15_NOME;
     }
+
     public Date getCA15_DATA() {
         return CA15_DATA;
     }

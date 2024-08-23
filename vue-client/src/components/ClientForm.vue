@@ -197,6 +197,9 @@ export default {
 </script>
 
 <style scoped>
-/* Importa o CSS global a partir da pasta assets */
-@import "@/assets/ClientStyle.css";
+/* Importa o CSS global */
+@import "@/styles/main.css";
+
+/* Importa o CSS específico do cliente */
+@import "@/styles/client.css";
 </style>

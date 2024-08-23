@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style>
-/* Adicione ou mantenha estilos globais aqui */
+@import "@/styles/main.css";
 </style>
