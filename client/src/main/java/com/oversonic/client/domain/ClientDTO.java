@@ -1,6 +1,7 @@
 package com.oversonic.client.domain;
 
-import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -10,8 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "CA15")
@@ -27,7 +26,6 @@ public class ClientDTO {
     private String CA15_NOME;
 
     @Column(name = "CA15_DATA")
-    @Temporal(TemporalType.DATE)
     private Date CA15_DATA;
 
     @JsonProperty("genero")
@@ -57,7 +55,7 @@ public class ClientDTO {
     @Column(name = "CA15_ENDEREC")
     private String CA15_ENDEREC;
 
-    @JsonProperty("numero")
+    @JsonProperty("num")
     @Column(name = "CA15_NUM")
     private String CA15_NUM;
 
@@ -77,17 +75,21 @@ public class ClientDTO {
     @Column(name = "CA15_COMPLEM")
     private String CA15_COMPLEM;
 
-    @JsonProperty("estilo")
+    @JsonProperty("estilo_musical")
     @Column(name = "CA15_ESTILO_MUSIC")
     private String CA15_ESTILO_MUSIC;
 
-    @JsonProperty("midia")
+    @JsonProperty("tipo_midia")
     @Column(name = "CA15_TIPO_MIDIA")
     private String CA15_TIPO_MIDIA;
 
     @JsonProperty("email")
     @Column(name = "CA15_EMAIL")
     private String CA15_EMAIL;
+
+    public ClientDTO() {
+        this.CA15_DATA = Date.valueOf(LocalDate.now());
+    }
 
     // Getters e Setters
     public Integer getCPID() {
@@ -104,10 +106,6 @@ public class ClientDTO {
 
     public Date getCA15_DATA() {
         return CA15_DATA;
-    }
-
-    public void setCA15_DATA(Date CA15_DATA) {
-        this.CA15_DATA = CA15_DATA;
     }
 
     public String getCA15_GENERO() {
@@ -147,6 +145,7 @@ public class ClientDTO {
     }
 
     public void setCA15_CEP(String CA15_CEP) {
+        
         this.CA15_CEP = CA15_CEP;
     }
 
@@ -226,7 +225,4 @@ public class ClientDTO {
         return CA15_EMAIL;
     }
 
-    public void setCA15_EMAIL(String CA15_EMAIL) {
-        this.CA15_EMAIL = CA15_EMAIL;
-    }
 }

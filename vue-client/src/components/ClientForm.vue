@@ -2,7 +2,7 @@
   <div>
     <header>
       <!-- Use require para importar imagens estáticas no Vue -->
-      <img :src="require('@/assets/Capa Oversonic #1.png')" alt="Imagem do Cabeçalho" />
+      <img :src="require('@/assets/CapaOversonic.png')" alt="Capa Oversonic">
       <h1>Cadastro de Clientes Oversonic</h1>
       <p>Este é um formulário de cadastro de Clientes Oversonic. Por favor, preencha todas as informações necessárias.</p>
     </header>
@@ -85,7 +85,7 @@
             <input type="text" id="cpf" v-model="cpf" />
 
             <label for="num">Número:</label>
-            <input type="text" id="num" v-model="num" />
+            <input type="text" id="numero" v-model="num" />
 
             <label for="bairro">Bairro:</label>
             <input type="text" id="bairro" v-model="bairro" />
@@ -162,14 +162,15 @@ export default {
       regiao: '',
       celular: '',
       estilo_musical: '',
-      resultado: ''  // Adiciona uma variável para armazenar a resposta do servidor
+      dataAtual: new Date().toISOString().split('T')[0],
+      resultado: ''
     };
   },
   methods: {
     async enviarDadosAxios() {
       try {
         // Envia os dados do formulário para o backend
-        await axios.post('http://localhost:8080/client/create', {  // Alterado para a porta 8081 e endpoint correto
+        await axios.post('http://localhost:8080/client/create', {
           nome: this.nome,
           endereco: this.endereco,
           complemento: this.complemento,
@@ -184,12 +185,13 @@ export default {
           cep: this.cep,
           regiao: this.regiao,
           celular: this.celular,
-          estilo_musical: this.estilo_musical
+          estilo_musical: this.estilo_musical,
+          CA15_DATA: this.dataAtual
         });
-        this.resultado = 'Dados enviados com sucesso!';  // Atualiza a variável de resultado
+        this.resultado = 'Dados enviados com sucesso!';
       } catch (error) {
         console.error('Erro ao enviar dados:', error);
-        this.resultado = 'Erro ao enviar dados.';  // Atualiza a variável de resultado em caso de erro
+        this.resultado = 'Erro ao enviar dados.';
       }
     }
   }

@@ -21,7 +21,8 @@ public class ClientController {
     private ClientService clientService;
 
     @PostMapping("/create")
-    public ResponseEntity<String> createCLient(@RequestBody ClientDTO newClient) {
+    public ResponseEntity<String> createClient(@RequestBody ClientDTO newClient) {
+        
         try {
             clientService.createCLient(newClient);
             String responseMessage = String.format(
