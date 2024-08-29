@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.oversonic.client.domain.ClientDTO;
 import com.oversonic.client.service.ClientService;
 
+
 @RestController
 @RequestMapping("/client")
 @CrossOrigin(origins = "http://localhost:8081")
@@ -50,9 +51,9 @@ public class ClientController {
         }
     }
 
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleException(Exception e) {
         return ResponseEntity.status(500).body("Erro interno: " + e.getMessage());
     }
+
 }

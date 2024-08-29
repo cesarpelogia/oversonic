@@ -10,7 +10,7 @@ import ClientForm from './components/ClientForm.vue';
 export default {
   name: 'App',
   components: {
-    ClientForm
+    ClientForm,
   }
 };
 </script>

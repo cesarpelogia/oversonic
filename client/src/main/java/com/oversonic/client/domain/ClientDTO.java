@@ -91,6 +91,11 @@ public class ClientDTO {
         this.CA15_DATA = Date.valueOf(LocalDate.now());
     }
 
+    public ClientDTO(String CA15_NOME, String CA15_CPF){
+        this.CA15_NOME = CA15_NOME;
+        this.CA15_CPF = CA15_CPF;
+    }
+
     // Getters e Setters
     public Integer getCPID() {
         return CPID;
@@ -223,6 +228,18 @@ public class ClientDTO {
 
     public String getCA15_EMAIL() {
         return CA15_EMAIL;
+    }
+
+    public void setCA15_DATA(Date CA15_DATA) {
+        this.CA15_DATA = CA15_DATA;
+    }
+
+    public void setCA15_EMAIL(String CA15_EMAIL) {
+        this.CA15_EMAIL = CA15_EMAIL;
+    }
+
+    public void setCA15_DATA(String string) {
+        this.CA15_DATA = Date.valueOf(LocalDate.parse(string));
     }
 
 }
