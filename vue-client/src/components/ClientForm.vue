@@ -1,17 +1,14 @@
 <template>
   <div>
     <header>
-      <!-- Use require para importar imagens estáticas no Vue -->
       <img :src="require('@/assets/CapaOversonic.png')" alt="Capa Oversonic">
       <h1>Cadastro de Clientes Oversonic</h1>
       <p>Este é um formulário de cadastro de Clientes Oversonic. Por favor, preencha todas as informações necessárias.</p>
     </header>
     <div>
-      <!-- Previne o comportamento padrão do formulário -->
       <form @submit.prevent="enviarDadosAxios">
         <div class="form-container">
           <div class="form-column">
-            <!-- Campos do formulário com v-model para vinculação bidirecional -->
             <label for="nome">Nome:</label>
             <input type="text" id="nome" v-model="nome" />
 
@@ -138,6 +135,9 @@
     <div v-if="resultado">
       <p>{{ resultado }}</p>
     </div>
+    <footer>
+      <p>&copy; 2024 Oversonic Music. Todos os direitos reservados.</p>
+    </footer>
   </div>
 </template>
 
