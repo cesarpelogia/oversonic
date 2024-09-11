@@ -2,7 +2,6 @@ package com.oversonic.client.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,10 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.oversonic.client.domain.ClientDTO;
 import com.oversonic.client.service.ClientService;
 
-
 @RestController
-@RequestMapping("/client")
-@CrossOrigin(origins = "http://localhost:8081")
+@RequestMapping("/api")
 public class ClientController {
 
     @Autowired
@@ -23,7 +20,6 @@ public class ClientController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createClient(@RequestBody ClientDTO newClient) {
-        
         try {
             clientService.createCLient(newClient);
             String responseMessage = String.format(
@@ -55,5 +51,4 @@ public class ClientController {
     public ResponseEntity<String> handleException(Exception e) {
         return ResponseEntity.status(500).body("Erro interno: " + e.getMessage());
     }
-
 }

@@ -142,7 +142,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import apiClient from '@/plugins/axios';
 
 export default {
   data() {
@@ -169,23 +169,22 @@ export default {
   methods: {
     async enviarDadosAxios() {
       try {
-        // Envia os dados do formulário para o backend
-        await axios.post('http://localhost:8080/client/create', {
-          nome: this.nome,
-          endereco: this.endereco,
-          complemento: this.complemento,
-          municipio: this.municipio,
-          estado: this.estado,
-          genero: this.genero,
-          email: this.email,
-          tipo_midia: this.tipo_midia,
-          cpf: this.cpf,
-          num: this.num,
-          bairro: this.bairro,
-          cep: this.cep,
-          regiao: this.regiao,
-          celular: this.celular,
-          estilo_musical: this.estilo_musical,
+        await apiClient.post('/create', {
+          CA15_NOME: this.nome,
+          CA15_ENDEREC: this.endereco,
+          CA15_COMPLEM: this.complemento,
+          CA15_MUNICP: this.municipio,
+          CA15_ESTADO: this.estado,
+          CA15_GENERO: this.genero,
+          CA15_EMAIL: this.email,
+          CA15_TIPO_MIDIA: this.tipo_midia,
+          CA15_CPF: this.cpf,
+          CA15_NUM: this.num,
+          CA15_BAIRRO: this.bairro,
+          CA15_CEP: this.cep,
+          CA15_REGIAO: this.regiao,
+          CA15_CELULAR: this.celular,
+          CA15_ESTILO_MUSIC: this.estilo_musical,
           CA15_DATA: this.dataAtual
         });
         this.resultado = 'Dados enviados com sucesso!';
