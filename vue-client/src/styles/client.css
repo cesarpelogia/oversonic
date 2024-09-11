@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-body {
-    font-family: 'Roboto', Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
     background: linear-gradient(135deg, #0C1A30, #1B395B);
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -14,6 +22,7 @@ header {
     background-color: #0C1A30; /* Azul Escuro */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0; /* Não encolher */
 }
 
 header img {
@@ -34,40 +43,56 @@ header p {
     font-size: 18px;
 }
 
+main {
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+}
+
 form {
     background-color: #1B395B;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     color: #FFFFFF;
 }
 
 .form-container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Permitir que os itens se ajustem em várias linhas */
+    flex-direction: column;
 }
 
-.form-column {
-    flex: 1;
-    margin: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #FFFFFF;
-}
-
-input[type="text"],
-input[type="email"],
-select {
-    width: 100%;
-    padding: 8px;
+.form-row {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os elementos */
     margin-bottom: 10px;
+}
+
+.form-row label {
+    margin-bottom: 5px; /* Espaço entre o label e o input */
+    color: #FFFFFF;
+    text-align: left; /* Alinha os labels à esquerda */
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group.left,
+.form-group.right {
+    text-align: left; /* Alinha os labels e inputs à esquerda */
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row select {
+    width: 100%; /* Ocupa toda a largura disponível dentro da coluna */
+    padding: 8px;
     border: 1px solid #CCCCCC;
     border-radius: 4px;
     box-sizing: border-box;
@@ -83,6 +108,7 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 button[type="submit"]:hover {
@@ -96,39 +122,37 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    color: #333;
+    flex-shrink: 0; /* Não encolher */
+    position: fixed; /* Fixa o footer no final da página */
+    bottom: 0;
+    width: 100%;
+}
+
 /* Media query para dispositivos móveis */
 @media (max-width: 768px) {
-    .form-container {
-        display: flex;
-        flex-direction: column; /* Exibir os itens em coluna */
+    .form-row {
+        flex-direction: column;
     }
 
-    .form-column {
-        width: 100%; /* Largura total para cada coluna */
-        margin: 0 0 20px 0; /* Margem inferior para espaçamento */
+    .form-group {
+        width: 100%; /* 100% da largura para cada campo */
+        margin-right: 0; /* Remover espaçamento lateral */
     }
 
-    .form-column:nth-child(1) { order: 1; }
-    .form-column:nth-child(2) { order: 2; }
-    .form-column:nth-child(3) { order: 3; }
-    .form-column:nth-child(4) { order: 4; }
-    .form-column:nth-child(5) { order: 5; }
-    .form-column:nth-child(6) { order: 6; }
-    .form-column:nth-child(7) { order: 7; }
-    .form-column:nth-child(8) { order: 8; }
-    .form-column:nth-child(9) { order: 9; }
-    .form-column:nth-child(10) { order: 10; }
-    .form-column:nth-child(11) { order: 11; }
-    .form-column:nth-child(12) { order: 12; }
-    .form-column:nth-child(13) { order: 13; }
-    .form-column:nth-child(14) { order: 14; }
-    .form-column:nth-child(15) { order: 15; }
-    .form-column:nth-child(16) { order: 16; }
+    .form-group.left,
+    .form-group.right {
+        text-align: left; /* Centralizar os campos em telas pequenas */
+    }
 
-    input[type="text"],
-    input[type="email"],
-    select {
-        width: calc(100% - 20px); /* Ajustar a largura para caber na tela com margem */
-        margin: 0 auto 10px auto; /* Centralizar os campos */
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row select {
+        width: 100%; /* Mantém a largura total em dispositivos móveis */
+        margin-bottom: 10px;
     }
 }
