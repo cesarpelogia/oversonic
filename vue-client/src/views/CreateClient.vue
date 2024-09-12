@@ -1,13 +1,14 @@
 <template>
   <div>
-    <header>
-      <h1>Cadastro de Clientes Oversonic</h1>
-      <p>Por favor, preencha o cadastro abaixo com suas informações pessoais e de contato.</p>
-      <p>Todos os campos são importantes para que possamos atendê-lo da melhor forma possível.</p>
-    </header>
     <main>
-      <form @submit.prevent="enviarDadosAxios">
-        <div class="form-container">
+      <form @submit.prevent="createClient">
+
+        <div class="form-container-client">
+          <div class="cabecalho">
+          <h1 class="titulo">Cadastro de Clientes Oversonic</h1>
+          <p class="descricao">Por favor, preencha o cadastro abaixo com suas informações pessoais e de contato.</p>
+          <p class="descricao">Todos os campos são importantes para que possamos atendê-lo da melhor forma possível.</p>
+          </div>
           <div class="form-row full-width">
             <div class="form-group">
               <label for="nome">Nome Completo:</label>
@@ -173,7 +174,7 @@
       <p>{{ resultado }}</p>
     </div>
     <footer>
-      <p>&copy; 2024 Oversonic Music. Todos os direitos reservados.</p>
+      <p>© 2023 Seu Nome. Todos os direitos reservados.</p>
     </footer>
   </div>
 </template>
@@ -181,7 +182,7 @@
 
 
 <script>
-import apiClient from '@/plugins/axios';
+import { createClient } from '@/plugins/axios';
 
 export default {
   data() {
@@ -206,9 +207,9 @@ export default {
     };
   },
   methods: {
-    async enviarDadosAxios() {
+    async createClient() {
       try {
-        await apiClient.post('/create', {
+        const newCLient = {
           CA15_NOME: this.nome,
           CA15_CPF: this.cpf,
           CA15_GENERO: this.genero,
@@ -225,7 +226,8 @@ export default {
           CA15_CEP: this.cep,
           CA15_REGIAO: this.regiao,
           CA15_DATA: this.dataAtual
-        });
+        };
+        await createClient(newCLient);
         this.resultado = 'Dados enviados com sucesso!';
       } catch (error) {
         console.error('Erro ao enviar dados:', error);
@@ -237,9 +239,9 @@ export default {
 </script>
 
 <style scoped>
-/* Importa o CSS global */
-@import "@/styles/main.css";
 
-/* Importa o CSS específico do cliente */
-@import "@/styles/client.css";
+@import '../styles/client.css';
+
+@import '../styles/main.css';
+
 </style>
